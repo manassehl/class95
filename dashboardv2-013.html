@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMCA Class of '95 - 30 Year Reunion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* z.ai ver 2 or 3 -->
+        /* --- Basic Setup & Colors --- */
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #E6C35C;
+            --gold-dark: #B8941F;
+            --dark-bg: #0C0C0C;
+            --card-bg: #151515;
+            --card-hover: #1A1A1A;
+            --text-light: #F5F5F5;
+            --text-muted: #A8A8A8;
+            --text-dark: #121212;
+            --accent: #8B4513;
+            --highlight: #C1272D;
+            --cream: #F8F0E3;
+            --hunter: #2F4F2F;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Roboto Slab', serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* --- Typography --- */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+        }
+        
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            margin-bottom: 50px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        h3 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        h4 {
+            font-size: 1.4rem;
+            color: var(--gold-light);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+        
+        .elegant-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        /* --- Header & Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, #0C0C0C 0%, #1A1A1A 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="none"/><path d="M0,0 L200,200 M200,0 L0,200" stroke="rgba(212, 175, 55, 0.03)" stroke-width="1"/></svg>');
+            background-size: 200px 200px;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            max-width: 100%;
+            width: 500px;
+            margin: 0 auto 40px;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-style: italic;
+        }
+        
+        .elegant-divider {
+            width: 150px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 30px auto;
+        }
+        
+        .scroll-indicator {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+        /* --- Navigation --- */
+        nav {
+            background: rgba(12, 12, 12, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 40px;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* --- Section Styling --- */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-intro {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--text-muted);
+        }
+        
+        /* --- Schedule & Event Cards --- */
+        #schedule {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #111111 100%);
+        }
+        
+        .events-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .event-card {
+            background: var(--card-bg);
+            border-radius: 5px;
+            padding: 40px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            background: var(--card-hover);
+        }
+        
+        .event-day {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .event-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .event-details {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .event-details li {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .event-details li i {
+            color: var(--gold);
+            margin-right: 15px;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .event-details strong {
+            color: white;
+            margin-right: 5px;
+            font-weight: 500;
+        }
+        
+        /* --- T-Shirt Section --- */
+        #tshirt {
+            background: linear-gradient(180deg, #111111 0%, var(--dark-bg) 100%);
+        }
+        
+        .tshirt-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+        
+        .tshirt-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .tshirt-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            border-radius: 50%;
+        }
+        
+        .tshirt-image img {
+            max-width: 100%;
+            border-radius: 5px;
+            border: 3px solid var(--gold);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s;
+        }
+        
+        .tshirt-image img:hover {
+            transform: scale(1.03);
+        }
+        
+        .tshirt-details {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .tshirt-price {
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin: 30px 0;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* --- Registration Section --- */
+        #register {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #111111 100%);
+        }
+        
+        .registration-container {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+        
+        .registration-steps {
+            flex: 3;
+        }
+        
+        .registration-calculator {
+            flex: 2;
+            background: var(--card-bg);
+            border-radius: 5px;
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .step {
+            margin-bottom: 50px;
+            padding-left: 50px;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            color: var(--text-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+        }
+        
+        .deadline {
+            background: rgba(193, 39, 45, 0.1);
+            border-left: 3px solid var(--highlight);
+            padding: 25px;
+            border-radius: 0 5px 5px 0;
+            margin: 40px 0;
+            font-size: 1.4rem;
+            font-weight: 400;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .payment-methods {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 5px;
+            margin: 40px 0;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        
+        .payment-methods strong {
+            color: var(--gold);
+        }
+        
+        .payment-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .payment-option:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .payment-option i {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-right: 20px;
+        }
+        
+        .calculator-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .calculator-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .calculator-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .calculator-label {
+            display: flex;
+            align-items: center;
+        }
+        
+        .calculator-label input {
+            margin-right: 15px;
+            width: 50px;
+            height: 35px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            color: white;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .calculator-price {
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+        
+        .calculator-total {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .calculator-total span {
+            color: var(--gold);
+        }
+        
+        /* --- Buttons --- */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 18px 40px;
+            border-radius: 3px;
+            text-decoration: none;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+        }
+        
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+        
+        .cta-button i {
+            margin-left: 10px;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            background: #080808;
+            padding: 60px 0 40px;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            color: var(--text-light);
+            transition: all 0.3s;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--text-dark);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* --- Elegant Decorative Elements --- */
+        .ornament {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 40px auto;
+        }
+        
+        .corner-ornament {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.1;
+        }
+        
+        .corner-ornament.top-left {
+            top: 20px;
+            left: 20px;
+            border-top: 2px solid var(--gold);
+            border-left: 2px solid var(--gold);
+        }
+        
+        .corner-ornament.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            border-bottom: 2px solid var(--gold);
+            border-right: 2px solid var(--gold);
+        }
+        
+        /* --- Timeline for Events --- */
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 50%;
+            padding-right: 40px;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            margin-right: 0;
+            padding-left: 40px;
+            text-align: left;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.2);
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 1024px) {
+            .tshirt-container {
+                flex-direction: column;
+            }
+            
+            .registration-container {
+                flex-direction: column;
+            }
+            
+            .registration-calculator {
+                width: 100%;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .timeline-item .timeline-content {
+                margin-left: 60px !important;
+                margin-right: 0 !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.4rem; }
+            
+            .logo {
+                width: 300px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .events-container {
+                flex-direction: column;
+            }
+            
+            .event-card {
+                width: 100%;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <img src="https://via.placeholder.com/500x200?text=LMCA+Class+of+%2795+30+Year+Reunion" alt="Class of 95 30 Year Reunion Logo" class="logo">
+            <h1>Thirty Years of Memories</h1>
+            <div class="ornament"></div>
+            <p class="tagline">Celebrating three decades since we walked the halls of Lobias Murray Christian Academy</p>
+            <p class="elegant-text">Join us as we reunite to reminisce, reconnect, and create new memories that will last a lifetime. This milestone celebration honors our journey since 1995.</p>
+            <div class="scroll-indicator" onclick="document.getElementById('schedule').scrollIntoView()">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="nav-logo">LMCA '95</div>
+            <ul class="nav-links">
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#tshirt">T-Shirts</a></li>
+                <li><a href="#register">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Schedule Section -->
+        <section id="schedule">
+            <div class="container">
+                <div class="section-header">
+                    <h2>A Weekend of Celebration</h2>
+                    <p class="section-intro">We've planned three unforgettable days to celebrate our 30-year reunion. Join us for any or all of these special events.</p>
+                </div>
+                
+                <div class="events-container">
+                    <div class="event-card">
+                        <div class="event-day">FRIDAY, OCTOBER 10</div>
+                        <h3 class="event-title">Dinner & '90s Throwback</h3>
+                        <ul class="event-details">
+                            <li><i class="fas fa-clock"></i> <strong>Time:</strong> 7:30 PM - 10:00 PM</li>
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Ruth's Chris Steak House (Addison)</li>
+                            <li><i class="fas fa-user-tie"></i> <strong>Attire:</strong> Dressy / Cocktail Attire</li>
+                            <li><i class="fas fa-dollar-sign"></i> <strong>Cost:</strong> $127.00 per person</li>
+                            <!-- 
+                            <li><i class="fas fa-gift"></i> <strong>Activity:</strong> '90s white elephant gift exchange (Bring a wrapped, '90s-inspired gift, ~$20 value)</li>
+                            -->
+                            <li><i class="fas fa-gift"></i> <strong>Itinerary:</strong> Games, Presentations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-day">SATURDAY, OCTOBER 11</div>
+                        <h3 class="event-title">Family, Fun & Field Day</h3>
+                        <ul class="event-details">
+                            <li><i class="fas fa-clock"></i> <strong>Time:</strong> 11:00 AM - 5:00 PM (Arrive by 10:30 AM)</li>
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Group Dynamics (Carrollton)</li>
+                            <li><i class="fas fa-tshirt"></i> <strong>Attire:</strong> Official Reunion T-Shirt & a '90s accessory!</li>
+                            <li><i class="fas fa-dollar-sign"></i> <strong>Cost:</strong> ~$65.00 per person</li>
+                            <li><i class="fas fa-info-circle"></i> <strong>Details:</strong> Family-friendly event with catered lunch from Chick-fil-A included. <em>(Final price is being confirmed and will be updated.)</em></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-day">SUNDAY, OCTOBER 12</div>
+                        <h3 class="event-title">Worship, Photos & Farewell</h3>
+                        <ul class="event-details">
+                            <li><i class="fas fa-clock"></i> <strong>Time:</strong> Morning Service, Photos at 1:30 PM</li>
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Church Service (TBD)</li>
+                            <li><i class="fas fa-palette"></i> <strong>Attire:</strong> Class Colors! (Hunter Green, Cream, Gold)</li>
+                            <li><i class="fas fa-dollar-sign"></i> <strong>Cost:</strong> Photoshoot included; meal details TBD</li>
+                            <li><i class="fas fa-camera"></i> <strong>Details:</strong> The main event is our official group photoshoot after service. Plan for a farewell meal to follow</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- T-Shirt Section -->
+        <section id="tshirt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Commemorative Keepsake</h2>
+                    <p class="section-intro">Take home a piece of our reunion with this exclusive t-shirt designed to honor our 30-year milestone.</p>
+                </div>
+                <div class="tshirt-container">
+                    <div class="tshirt-image">
+                        <img src="https://via.placeholder.com/300x300?text=Reunion+T-Shirt" alt="Reunion T-shirt design based on the logo">
+                    </div>
+                    <div class="tshirt-details">
+                        <h3>Official Reunion T-Shirt</h3>
+                        <p class="elegant-text">Crafted from premium materials, this elegant black tee features our custom 30-year reunion logo in gold foil. A timeless keepsake to cherish for years to come.</p>
+                        <div class="tshirt-price">$25.00</div>
+                        <p class="elegant-text">Available in sizes S-XXL. Please indicate your size when ordering.</p>
+                        <a href="#" class="cta-button">Order T-Shirt <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Reserve Your Place</h2>
+                    <p class="section-intro">Join us for this momentous occasion. Our flexible registration allows you to customize your reunion experience.</p>
+                </div>
+                
+                <div class="registration-container">
+                    <div class="registration-steps">
+                        <div class="deadline">
+                            <i class="fas fa-exclamation-circle"></i> Registration Deadline: Friday, September 15, 2025
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>Calculate Your Total</h3>
+                            <p class="elegant-text">Select the events and items you wish to attend. Use the calculator on the right to help determine your total cost.</p>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>Submit Your Payment</h3>
+                            <div class="payment-methods">
+                                <p class="elegant-text">Please send your payment to <strong>Paul Taylor</strong> via one of the following methods:</p>
+                                
+                                <div class="payment-option">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>
+                                        <strong>Cash App:</strong> $ExampleTag
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-option">
+                                    <i class="fas fa-university"></i>
+                                    <div>
+                                        <strong>Zelle:</strong> (555) 555-5555
+                                    </div>
+                                </div>
+                                
+                                <p class="elegant-text"><strong>Important:</strong> In the memo/note section, please include your full name and a breakdown of your payment (e.g., "Jane Doe, 1x Fri, 2x Sat, 2x Shirts").</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>Prepare for the Celebration</h3>
+                            <p class="elegant-text">Once your payment is received, you're all set! We'll send you updates as the reunion approaches. We can't wait to celebrate this milestone with you.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="registration-calculator">
+                        <h3 class="calculator-title">Cost Calculator</h3>
+                        <div class="calculator-item">
+                            <div class="calculator-label">
+                                <input type="number" id="friday-count" min="0" value="0" onchange="calculateTotal()">
+                                <span>Friday Dinner</span>
+                            </div>
+                            <div class="calculator-price">$127.00 each</div>
+                        </div>
+                        <div class="calculator-item">
+                            <div class="calculator-label">
+                                <input type="number" id="saturday-count" min="0" value="0" onchange="calculateTotal()">
+                                <span>Saturday Field Day</span>
+                            </div>
+                            <div class="calculator-price">$65.00 each</div>
+                        </div>
+                        <div class="calculator-item">
+                            <div class="calculator-label">
+                                <input type="number" id="shirt-count" min="0" value="0" onchange="calculateTotal()">
+                                <span>Reunion T-Shirts</span>
+                            </div>
+                            <div class="calculator-price">$25.00 each</div>
+                        </div>
+                        <div class="calculator-total">
+                            <div>Total:</div>
+                            <span id="total-amount">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">LMCA '95</div>
+                <div class="footer-links">
+                    <a href="#schedule">Schedule</a>
+                    <a href="#tshirt">T-Shirts</a>
+                    <a href="#register">Register</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Questions? Contact the planning committee at <a href="mailto:LMCA95Reunion@email.com" style="color: var(--gold);">LMCA95Reunion@email.com</a></p>
+                <p>&copy; 2025 LMCA Class of '95 Reunion Committee</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cost Calculator Function
+        function calculateTotal() {
+            const fridayCount = parseInt(document.getElementById('friday-count').value) || 0;
+            const saturdayCount = parseInt(document.getElementById('saturday-count').value) || 0;
+            const shirtCount = parseInt(document.getElementById('shirt-count').value) || 0;
+            
+            const fridayPrice = 127.00;
+            const saturdayPrice = 65.00;
+            const shirtPrice = 25.00;
+            
+            const total = (fridayCount * fridayPrice) + (saturdayCount * saturdayPrice) + (shirtCount * shirtPrice);
+            
+            document.getElementById('total-amount').textContent = '$' + total.toFixed(2);
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
