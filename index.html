@@ -944,7 +944,82 @@
                     <div class="deadline">
                         <i class="fas fa-exclamation-circle"></i> Registration Deadline: Friday, September 15, 2025
                     </div>
-                    
+                    <!-- Registration Form -->
+<div class="registration-calculator">
+  <h3>Register for the Event</h3>
+  <form class="registration-form" action="https://formspree.io/f/YOUR-FORMSPREE-ENDPOINT" method="POST">
+    
+    <label>
+      Full Name<span>*</span>
+      <input type="text" name="name" required>
+    </label>
+
+    <label>
+      Email Address<span>*</span>
+      <input type="email" name="_replyto" required>
+    </label>
+
+    <label>
+      Phone Number
+      <input type="tel" name="phone">
+    </label>
+
+    <label>
+      Message / Special Requests
+      <textarea name="message" rows="4"></textarea>
+    </label>
+
+    <button type="submit" class="cta-button">Submit Registration</button>
+  </form>
+</div>
+
+<!-- Additional Form Styling -->
+<style>
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.registration-form label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gold-light);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.registration-form input,
+.registration-form textarea {
+  padding: 12px 15px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: var(--card-bg);
+  color: var(--text-light);
+  border-radius: 4px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.registration-form input:focus,
+.registration-form textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+  outline: none;
+}
+
+.registration-form span {
+  color: var(--highlight);
+  margin-left: 4px;
+}
+
+.registration-form .cta-button {
+  align-self: flex-start;
+}
+</style>
+
                     <div class="step">
                         <div class="step-number">1</div>
                         <h3>Calculate Your Total</h3>
