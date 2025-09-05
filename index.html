@@ -900,7 +900,7 @@
                         <li><i class="fas fa-clock"></i> <strong>Time:</strong> Morning Service, Photos at 1:30 PM</li>
                         <li><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Full Gospel Holy Temple Church Service (TBD)</li>
                         <li><i class="fas fa-palette"></i> <strong>Attire:</strong> Class Colors! (Hunter Green, Cream, Gold)</li>
-                        <li><i class="fas fa-dollar-sign"></i> <strong>Cost:</strong> Class photography 1hr session $128 + 2hr on Friday ($128); Class photo $385 for 3hrs (~$15/person for 20+ people)</li>
+                        <li><i class="fas fa-dollar-sign"></i> <strong>Cost:</strong> Class photography 1hr session $128 + 2hr on Friday ($128); Class photo $385 for 3hrs (~$15/person for 20+ people); Sunday meal $25 per person</li>
                         <li><i class="fas fa-camera"></i> <strong>Details:</strong> The main event is our official group photoshoot after service. Please come early to access assigned seating. Our Sunday meal location has been approved for Sunday. We need to decide on the menu.</li>
                     </ul>
                 </div>
@@ -1052,6 +1052,13 @@
                         </div>
                         <div class="calculator-price">$25.00 each</div>
                     </div>
+                    <div class="calculator-item">
+                        <div class="calculator-label">
+                            <input type="number" id="sunday-count" min="0" value="0" onchange="calculateTotal()">
+                            <span>Sunday Meal</span>
+                        </div>
+                        <div class="calculator-price">$25.00 each</div>
+                    </div>
                     <div class="calculator-total">
                         <div>Total:</div>
                         <span id="total-amount">$0.00</span>
@@ -1112,7 +1119,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>Questions? Contact the planning committee at <a href="mailto:LMCA95Reunion@email.com" style="color: var(--gold);">LMCA95Reunion@email.com</a></p>
+            <p>Questions? Contact the planning committee at <a href="mailto:lmcaclassof1995@gmail.com" style="color: var(--gold);">lmcaclassof1995@gmail.com</a></p>
             <p>&copy; 2025 LMCA Class of '95 Reunion Committee</p>
         </div>
     </div>
@@ -1124,13 +1131,15 @@
         const fridayCount = parseInt(document.getElementById('friday-count').value) || 0;
         const saturdayCount = parseInt(document.getElementById('saturday-count').value) || 0;
         const shirtCount = parseInt(document.getElementById('shirt-count').value) || 0;
-        
+        const sundayCount = parseInt(document.getElementById('sunday-count').value) || 0;
+
         const fridayPrice = 127.00;
         const saturdayPrice = 65.00;
         const shirtPrice = 25.00;
-        
-        const total = (fridayCount * fridayPrice) + (saturdayCount * saturdayPrice) + (shirtCount * shirtPrice);
-        
+        const sundayPrice = 25.00;
+
+        const total = (fridayCount * fridayPrice) + (saturdayCount * saturdayPrice) + (shirtCount * shirtPrice) + (sundayCount * sundayPrice);
+
         document.getElementById('total-amount').textContent = '$' + total.toFixed(2);
     }
     
