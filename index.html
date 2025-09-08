@@ -1054,6 +1054,13 @@
                         </div>
                         <div class="calculator-price">$25.00 each</div>
                     </div>
+                    <div class="calculator-item">
+                        <div class="calculator-label">
+                            <input type="number" id="photo-count" min="0" value="0" onchange="calculateTotal()">
+                            <span>Class Photos</span>
+                        </div>
+                        <div class="calculator-price">$15.00 each</div>
+                    </div>
                     <div class="calculator-total">
                         <div>Total:</div>
                         <span id="total-amount">$0.00</span>
@@ -1123,17 +1130,35 @@
 <script>
     // Cost Calculator Function
     function calculateTotal() {
+        console.log('calculateTotal called');
+
         const fridayCount = parseInt(document.getElementById('friday-count').value) || 0;
         const saturdayCount = parseInt(document.getElementById('saturday-count').value) || 0;
         const shirtCount = parseInt(document.getElementById('shirt-count').value) || 0;
         const sundayCount = parseInt(document.getElementById('sunday-count').value) || 0;
+        const photoCount = parseInt(document.getElementById('photo-count').value) || 0;
+
+        console.log('Counts:', { fridayCount, saturdayCount, shirtCount, sundayCount, photoCount });
 
         const fridayPrice = 127.00;
-        const saturdayPrice = 65.00;
+        const saturdayPrice = 30.00; // Fixed: was 65.00, should match HTML display of $30.00
         const shirtPrice = 25.00;
         const sundayPrice = 25.00;
+        const photoPrice = 15.00;
 
-        const total = (fridayCount * fridayPrice) + (saturdayCount * saturdayPrice) + (shirtCount * shirtPrice) + (sundayCount * sundayPrice);
+        console.log('Prices:', { fridayPrice, saturdayPrice, shirtPrice, sundayPrice, photoPrice });
+
+        const fridayTotal = fridayCount * fridayPrice;
+        const saturdayTotal = saturdayCount * saturdayPrice;
+        const shirtTotal = shirtCount * shirtPrice;
+        const sundayTotal = sundayCount * sundayPrice;
+        const photoTotal = photoCount * photoPrice;
+
+        console.log('Subtotals:', { fridayTotal, saturdayTotal, shirtTotal, sundayTotal, photoTotal });
+
+        const total = fridayTotal + saturdayTotal + shirtTotal + sundayTotal + photoTotal;
+
+        console.log('Final total:', total);
 
         document.getElementById('total-amount').textContent = '$' + total.toFixed(2);
     }
