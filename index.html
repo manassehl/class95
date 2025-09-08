@@ -860,12 +860,15 @@
             </div>
             
             <div class="events-container">
-                <div class="event-card">
-                    <div class="event-day"><h2>FRIDAY, OCTOBER 10</h2></div>
+                <article class="event-card" aria-label="Friday Dinner and 90s Throwback Event" data-event-date="2025-10-10">
+                    <time class="event-day" datetime="2025-10-10">FRIDAY, OCTOBER 10</time>
                     <h3 class="event-title">Dinner & '90s Throwback</h3>
                     <ul class="event-details">
                         <li><i class="fas fa-clock"></i> <strong>Time:</strong> 7:30 PM - 10:00 PM</li>
-                        <li><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Ruth's Chris Steak House (Addison)</li>
+                        <li><i class="fas fa-building"></i> <strong>Location:</strong> Ruth's Chris Steak House</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> 17840 Dallas Pkwy, Dallas, TX 75287</li>
+                        <li><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="https://m.ruthschris.com/locations/tx/dallas/dallas/7312" target="_blank">Ruth's Chris Steak House (Addison)</a></li>
+                        <li><i class="fas fa-phone"></i> <strong>Phone:</strong> 972-416-9646</li>
                         <li><i class="fas fa-user-tie"></i> <strong>Attire:</strong> Dressy / Cocktail Attire</li>
                         <li><i class="fas fa-dollar-sign"></i> <strong>Cost:</strong> $127.00 per person (25 people w/balance of $2648.07 as a group…down payment of $1500)</li>
                         <!--
@@ -881,14 +884,17 @@
                        <a href="menu.jpeg"><img src="menu.jpeg" alt="Menu for the Friday Night Dinner" style="width: 100%; max-width: 400px; margin-top: 10px; border-radius: 4px; border: 1px solid rgba(212, 175, 55, 0.2);">
                         </a>
                     </div>
-                </div>
+                </article>
                 
                 <div class="event-card">
                     <div class="event-day">SATURDAY, OCTOBER 11</div>
                     <h3 class="event-title">Family, Fun & Field Day</h3>
                     <ul class="event-details">
                         <li><i class="fas fa-clock"></i> <strong>Time:</strong> 11:00 AM - 2:00 PM (Arrive by 10:30 AM)</li>
-                        <li><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> <a href="https://groupdynamix.com/">Group Dynamics (Carrollton)</a></li>
+                        <li><i class="fas fa-building"></i> <strong>Location:</strong> Group Dynamix</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> 1100 Venture Ct #120, Carrollton, TX 75006</li>
+                        <li><i class="fas fa-phone"></i> <strong>Phone:</strong> 972-416-9646</li>
+                        <li><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="https://groupdynamix.com/" target="_blank">Group Dynamix</a></li>
                         <li><i class="fas fa-tshirt"></i> <strong>Attire:</strong> Official Reunion T-Shirt & a '90s accessory!</li>
                         <li><i class="fas fa-dollar-sign"></i> <strong>Cost:</strong> $30.00 per person (min. requirement is 15 people w/balance of $525 as a group)</li>
                         <li><i class="fas fa-info-circle"></i> <strong>Details:</strong> Family-friendly event. Lunch is optional.</li>
@@ -900,7 +906,10 @@
                     <h3 class="event-title">Worship, Photos & Farewell</h3>
                     <ul class="event-details">
                         <li><i class="fas fa-clock"></i> <strong>Time:</strong> Morning Service, Photos at 1:30 PM</li>
-                        <li><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Full Gospel Holy Temple Church Service (TBD)</li>
+                        <li><i class="fas fa-building"></i> <strong>Location:</strong> Full Gospel Holy Temple Church</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> 39727 Lyndon B Johnson Fwy, Dallas, TX 75237</li>
+                        <li><i class="fas fa-phone"></i> <strong>Phone:</strong> 972-572-3448</li>
+                        <li><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="http://www.fght.org/" target="_blank">Full Gospel Holy Temple Church</a></li>
                         <li><i class="fas fa-palette"></i> <strong>Attire:</strong> Class Colors! (Hunter Green, Cream, Gold)</li>
                        <!--
                              <li><i class="fas fa-dollar-sign"></i> <strong>Cost:</strong> Class photography 1hr session $128 + 2hr on Friday ($128); Class photo $385 for 3hrs (~$15/person for 20+ people); Sunday meal $25 per person</li>
@@ -1010,7 +1019,7 @@
 }
 </style>
 
-                    <div class="step">
+                    <div class="step"> 
                         <div class="step-number">1</div>
                         <h3>Calculate Your Total</h3>
                         <p class="elegant-text">Select the events and items you wish to attend. Use the calculator on the right to help determine your total cost.</p>
@@ -1029,7 +1038,7 @@
                             <input type="number" id="saturday-count" min="0" value="0" onchange="calculateTotal()">
                             <span>Saturday Field Day</span>
                         </div>
-                        <div class="calculator-price">$65.00 each</div>
+                        <div class="calculator-price">$30.00 each</div>
                     </div>
                     <div class="calculator-item">
                         <div class="calculator-label">
@@ -1128,7 +1137,7 @@
 
         document.getElementById('total-amount').textContent = '$' + total.toFixed(2);
     }
-    
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -1141,6 +1150,51 @@
             }
         });
     });
+
+    // Enhanced event card validation with error handling
+    function validateEventCards() {
+        try {
+            // Validate event dates using data attributes for better maintainability
+            const eventCards = document.querySelectorAll('.event-card');
+            eventCards.forEach(card => {
+                const eventDateAttr = card.getAttribute('data-event-date');
+                if (eventDateAttr) {
+                    console.log('Event date from data attribute:', eventDateAttr);
+                    const eventDate = new Date(eventDateAttr);
+                    if (isNaN(eventDate.getTime())) {
+                        console.error('Invalid date format in data-event-date:', eventDateAttr);
+                        // Add visual error indicator
+                        card.style.borderColor = 'red';
+                        card.insertAdjacentHTML('afterbegin', '<div class="error-message" style="color: red; font-size: 0.9rem;">Invalid event date</div>');
+                    } else {
+                        const currentDate = new Date();
+                        if (eventDate < currentDate) {
+                            console.warn('Event date is in the past:', eventDateAttr);
+                            // Optional: Add past event styling
+                            card.style.opacity = '0.7';
+                        } else {
+                            console.log('Event date is valid and future:', eventDateAttr);
+                        }
+                    }
+                } else {
+                    console.warn('Missing data-event-date attribute on event card');
+                }
+
+                // Check accessibility attributes
+                const hasAriaLabel = card.hasAttribute('aria-label') || card.hasAttribute('aria-labelledby');
+                console.log('Event card has accessibility attributes:', hasAriaLabel);
+                if (!hasAriaLabel) {
+                    console.warn('Event card missing accessibility attributes');
+                    // Add fallback aria-label
+                    card.setAttribute('aria-label', 'Event details');
+                }
+            });
+        } catch (error) {
+            console.error('Error during event card validation:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', validateEventCards);
 </script>
 </body>
 </html>
